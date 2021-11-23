@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset name="essential" addfieldpath="/administrator/components/com_engine/models/fields">
+        <field
+                name="title"
+                type="text"
+                label="Titel"
+                class="input-xxlarge"
+                default=""
+                required="true"
+                />
+        <field
+                name="subtitle"
+                type="text"
+                label="Subtitel"
+                class="input-xxlarge"
+                default=""
+                />
+        <field
+                name="text"
+                type="text"
+                label="Tekst"
+                class="input-xxlarge"
+                default=""
+                />
+        <field
+                name="button_text"
+                type="text"
+                label="Button-tekst"
+                class="input-xxlarge"
+                default=""
+        />
+        <field
+                name="button_link"
+                type="text"
+                label="Button-link"
+                class="input-xxlarge"
+                default=""
+        />
+        <field
+                name="tagline"
+                type="text"
+                label="Tagline"
+                class="input-xxlarge"
+                default=""
+        />
+        <field
+                name="image"
+                type="media"
+                label="Afbeelding"
+                class="inputbox"
+                default=""
+                preview="tooltip"
+                directory="headers"
+                required="true"
+                />
+	</fieldset>
+	<fieldset name="hidden">
+	
+		<field 
+			name="id"
+			type="hidden"
+		/>
+		
+	</fieldset>
+</form>

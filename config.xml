@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <name>Engine configratie</name>
+    <form>
+        <fieldset name="DEFAULT" addfieldpath="/administrator/components/com_engine/models/fields">
+            <field
+                    name="email"
+                    type="text"
+                    label="Main E-mail"
+            />
+            <field
+                    name="email_download"
+                    type="text"
+                    label="Download E-mail"
+            />
+            <field
+                    name="fileupload"
+                    type="fileupload"
+                    label="Download PDF"
+            />
+        </fieldset>
+        <fieldset name="newsletter" label="Nieuwsbrief">
+            <field
+                    name="newsletter_api_integration"
+                    type="radio"
+                    label="API koppeling"
+                    class="btn-group btn-group-yesno"
+                    default="NONE"
+            >
+                    <option value="NONE">Geen</option>
+                    <option value="CP">Campaign Monitor</option>
+                    <option value="MC">Mailchimp</option>
+            </field>
+            <field
+                    name="newsletter_api_cp_key"
+                    type="text"
+                    label="API key"
+                    showon="newsletter_api_integration:CP"
+                    class="input-xxlarge"
+            />
+            <field
+                    name="newsletter_api_cp_list_id"
+                    type="text"
+                    label="List ID"
+                    showon="newsletter_api_integration:CP"
+                    class="input-xxlarge"
+            />
+            <field
+                    name="newsletter_api_mc_key"
+                    type="text"
+                    label="API key"
+                    showon="newsletter_api_integration:MC"
+                    class="input-xxlarge"
+            />
+            <field
+                    name="newsletter_api_mc_list_id"
+                    type="text"
+                    label="List ID"
+                    showon="newsletter_api_integration:MC"
+                    class="input-xxlarge"
+            />
+        </fieldset>
+        <fieldset name="thankyous" label="Bedanktpagina's">
+            <field
+                    name="thankyou_contact_menuitem"
+                    type="menuitem"
+                    label="Contactformulier"
+            />
+            <field
+                    name="thankyou_download_menuitem"
+                    type="menuitem"
+                    label="Downloadformulier"
+            />
+        </fieldset>
+        <fieldset
+                name="permissions"
+                label="JCONFIG_PERMISSIONS_LABEL"
+                description="JCONFIG_PERMISSIONS_DESC"
+        >
+
+            <field
+                    name="rules"
+                    type="rules"
+                    label="JCONFIG_PERMISSIONS_LABEL"
+                    validate="rules"
+                    filter="rules"
+                    component="com_engine"
+                    section="component" />
+        </fieldset>
+    </form>
+</config>

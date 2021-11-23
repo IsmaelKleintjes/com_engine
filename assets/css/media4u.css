@@ -1,0 +1,25 @@
+#queue { overflow: auto; margin-bottom: 10px; }
+#uploadMessages, #uploadErrors { filter: inherit; } 
+.uploadifive-queue-item { background-color: #f9f9f9; border: 1px solid #D5D5D5; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; font: 12px Arial, Helvetica, Sans-serif; margin-top: 3px; padding: 15px; }
+.uploadify-queue-item .cancel { float: right; }
+.uploadifive-queue-item .close { isplay: block; float: right; height: 16px; text-indent: -9999px; width: 16px; }
+.uploadifive-queue-item .progress { border: 1px solid #D0D0D0; height: 3px; margin-top: 5px; width: 100%; margin-bottom: 0px!important; }
+.uploadifive-queue-item .progress-bar { background-color: #0072BC; height: 3px; width: 0; }
+.uploadButton{ height: auto!important; width: auto!important; line-height: 20px!important; margin-right: 5px; }
+.sortable-handler{ cursor: n-resize; }
+.uploadLabel{ margin: 0!important; }
+.btn [class^="icon-"]{ margin-top: 1px!important; }
+.tableCenter td{ width: 25%; text-align: center!important; }
+.imagePreview{ cursor: pointer; }
+
+@media (max-width: 1200px){
+	.uploadLabel { width: 140px !important;}
+	.order { display: none;}
+}
+@media (max-width: 968px){
+	.uploadLabel { width: 50px !important;}	
+}
+@media (max-width: 767px){
+	.phone-width{ width: 33%!important; }
+	.phone-width b{ display: none; }
+}

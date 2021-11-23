@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset name="essential" addfieldpath="/administrator/components/com_engine/models/fields">
+		
+		<field
+			name="title"
+			type="text"
+			label="Naam"
+			labelclass="control-label"
+			class="inputbox validate"
+			required="true"
+			default=""
+		/>
+        <field
+                name="alias"
+                type="text"
+                label="Alias"
+                labelclass="control-label"
+                class="inputbox validate"
+                default=""
+                hint="Automatisch genereren vanuit naam"
+        />
+        <field
+                name="value"
+                type="text"
+                label="Waarde"
+                labelclass="control-label"
+                class="inputbox validate"
+                default=""
+        />
+        <field
+			name="cat_id"
+			type="cat"
+			label="Categorie"
+            crud="feature"
+			labelclass="control-label"
+			class="inputbox validate"
+			default=""
+		>
+		    <option>- selecteer -</option>
+        </field>
+
+	</fieldset>
+	
+	<fieldset name="hidden">
+		
+		<field
+			name="id"
+			type="hidden"
+		/>
+        <field
+			name="published"
+			type="hidden"
+            default="1"
+		/>
+		
+	</fieldset>
+</form>

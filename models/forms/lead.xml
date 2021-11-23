@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset name="essential" addfieldpath="/administrator/components/com_engine/models/fields">
+        <field
+                name="name"
+                type="text"
+                label="Naam"
+                class="inputbox"
+                default=""
+                readonly="true"
+                />
+		<field
+			name="email"
+			type="email"
+			label="Email"
+			class="inputbox"
+			default=""
+            readonly="true"
+		/>
+		<field
+                name="phone"
+                type="text"
+                label="Telefoonnummer"
+                class="inputbox"
+                default=""
+                readonly="true"
+                />
+
+	</fieldset>
+
+	<fieldset name="detail">
+        <field
+                name="message"
+                type="textarea"
+                label="Bericht"
+                class="input-xxlarge"
+                default=""
+                readonly="true"
+                rows="10"
+        />
+	</fieldset>
+	<fieldset name="hidden">
+	
+		<field 
+			name="id"
+			type="hidden"
+		/>
+		
+	</fieldset>
+</form>

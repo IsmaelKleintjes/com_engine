@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset name="essential">
+		
+		<field
+			name="title"
+			type="text"
+			label="Titel"
+			labelclass="control-label"
+			class="inputbox validate"
+			required="true"
+			default=""
+		/>
+        <field
+                name="trigger"
+                type="text"
+                label="Trigger"
+                labelclass="control-label"
+                class="inputbox validate"
+                required="true"
+                default=""
+        />
+		<field
+			name="template_id"
+			type="sql"
+			label="Bericht template"
+			labelclass="control-label"
+			class="inputbox validate"
+			required="true"
+			query="SELECT DISTINCT id, title FROM #__eng_message_template ORDER BY title"
+			key_field="id"
+			value_field="title"
+		/>
+
+        <field
+                name="is_email"
+                type="radio"
+                label="E-mail"
+                labelclass="control-label"
+                class="btn-group btn-group-yesno"
+                required="true"
+                default="1"
+        >
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+        </field>
+        <field
+                name="is_notification"
+                type="radio"
+                label="Notificatie"
+                labelclass="control-label"
+                class="btn-group btn-group-yesno"
+                required="true"
+                default="0"
+        >
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
+	</fieldset>
+    <fieldset name="message">
+        <field
+                name="email_subject"
+                type="text"
+                label="Onderwerp"
+                labelclass="control-label"
+                class="inputbox span12"
+                default=""
+        />
+        <field
+                name="email"
+                type="editor"
+                label="E-mail"
+                labelclass="control-label"
+                class="inputbox validate"
+                default=""
+                filter="raw"
+        />
+        <field
+                name="notification_subject"
+                type="text"
+                label="Onderwerp"
+                labelclass="control-label"
+                class="inputbox span12"
+                default=""
+        />
+        <field
+                name="notification"
+                type="editor"
+                label="Notificatie"
+                labelclass="control-label"
+                class="inputbox validate"
+                default=""
+                filter="raw"
+        />
+    </fieldset>
+	<fieldset name="hidden">
+		
+		<field
+			name="id"
+			type="hidden"
+		/>
+		
+	</fieldset>
+</form>

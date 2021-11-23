@@ -1,0 +1,92 @@
+<?php defined('_JEXEC') or die;
+
+class EngineModelBlank extends JModelList
+{
+	public $config = array();
+	
+	public function __construct($config = array())
+	{
+		$this->config = array(
+			'component' => 'com_' . COMPONENT,
+			'crud' => 'blank',
+			'cruds' => 'blanks',
+			'fields' => array(
+				array(
+                    'label' => JText::_('Ordering'),
+                    'column' => 'ordering',
+					'sort' => true,
+                ),
+                array(
+					'label' => JText::_('JGLOBAL_CHECK_ALL'),
+					'column' => 'check',
+				),
+                array(
+                    'label' => JText::_('JSTATUS'),
+                    'column' => 'published',
+                    'sort' => true
+                ),
+				array(
+					'label' => JText::_('Naam'),
+					'column' => 'name',
+					'sort' => true,
+                    'link' => true
+				),
+				array( 
+					'label' => JText::_('JDATE'),
+					'column' => 'created',
+					'sort' => true,
+                    'format' => 'date'
+				), 
+				array( 
+					'label' => JText::_('JGRID_HEADING_ID'),
+					'column' => 'id',
+					'sort' => true
+				),
+			)
+		);
+		
+		if(empty($config['filter_fields'])) {
+			$config['filter_fields'] = EngineHelper::getFilterFields( $this->config );
+		}
+		parent::__construct($config);
+	}
+
+	public function getListQuery()
+	{
+	    $db = JFactory::getDbo();
+		$query = parent::getListQuery();
+		
+		$query->select("*");
+		$query->from($db->quoteName('#__engine_blank'));
+
+		$search = $this->getState('filter.search');
+		if (!empty($search))
+		{
+			$trueSearch = '%'.$db->escape($search).'%';
+			$query->where("CONCAT(name) LIKE ".$db->quote($trueSearch));
+		}
+
+        $published = $this->getState('filter.published');
+        if (is_numeric($published)) {
+            $query->where($db->quoteName('published').' = ' . (int)$published);
+        }
+        elseif (!$published) {
+            $query->where($db->quoteName('published').' = 1');
+        }
+
+		$orderCol = $this->state->get('list.ordering', 'ordering');
+		$orderDirn = $this->state->get('list.direction', 'desc');
+		$query->order($db->escape($orderCol.' '.$orderDirn));
+
+		return $query;
+	}
+
+	protected function populateState($ordering = 'ordering', $direction = 'desc')
+	{
+		$this->setState('filter.search', $this->getUserStateFromRequest($this->context.'.filter.search', 'filter_search'));
+		$this->setState('filter.published', $this->getUserStateFromRequest($this->context.'.filter.published', 'filter_published'));
+
+		parent::populateState($ordering, $direction);
+	}
+	
+}

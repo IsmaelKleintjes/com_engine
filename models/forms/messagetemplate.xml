@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset name="essential">
+	
+		<field
+			name="title"
+			type="text"
+			label="Naam"
+			labelclass="control-label"
+			class="inputbox validate"
+			required="true"
+			default=""
+		/>
+		
+		<field
+			name="name_sender"
+			type="text"
+			label="Naam afzender"
+			labelclass="control-label"
+			class="inputbox validate"
+			required="true"
+			default=""
+		/>
+		
+		<field
+			name="email_sender"
+			type="email"
+			label="E-mail afzender"
+			labelclass="control-label"
+			class="inputbox"
+			required="true"
+			validate="email"
+			default=""
+		/>
+		
+	</fieldset>
+
+	<fieldset name="test">
+	
+		<field
+			name="test_message_id"
+			type="sql"
+			label="Test e-mail bericht"
+			labelclass="control-label"
+			class="inputbox validate"
+			query="SELECT `trigger`, title FROM #__eng_message ORDER BY title ASC"
+			key_field="trigger"
+			value_field="title"
+		>
+			<option value=""> - Selecteer - </option>
+		</field>
+
+		<field
+			name="test_email"
+			type="email"
+			label="Test e-mail ontvanger"
+			labelclass="control-label"
+			class="inputbox"
+			validate="email"
+			default=""
+		/>
+	
+	</fieldset>
+
+	<fieldset name="style">
+		
+		<field
+			name="style"
+			type="textarea"
+			label="Stijl"
+			labelclass="control-label"
+			class="inputbox validate textarea-custom"
+			required="false"
+            rows="20"
+			default=""
+			filter="raw"
+		/>
+	
+
+
+	</fieldset>
+
+    <fieldset name="template">
+        <field
+                name="template"
+                type="editor"
+                label="Template"
+                labelclass="control-label"
+                class="inputbox validate templatebox"
+                required="false"
+                default=""
+                filter="raw"
+                />
+    </fieldset>
+	
+	<fieldset name="hidden">
+	
+		<field 
+			name="id"
+			type="hidden"
+		/>
+		
+	</fieldset>
+</form>

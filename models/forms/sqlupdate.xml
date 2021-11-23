@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset name="general">
+
+		<field
+                name="short_description"
+                type="text"
+                label="Korte omschrijving"
+                class="input-xxlarge"
+				required="true"
+                default=""
+                />
+
+		<field
+                name="code"
+                type="textarea"
+                label="SQL"
+                class="input-xxlarge"
+                rows="50"
+				required="true"
+                default=""
+                />
+
+	</fieldset>
+
+	<fieldset name="hidden">
+		
+		<field
+			name="id"
+			type="hidden"
+		/>
+
+	</fieldset>
+</form>

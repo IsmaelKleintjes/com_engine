@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset name="essential">
+        <field
+                name="id"
+                type="hidden"
+        />
+        <field
+                name="name"
+                type="text"
+                default=""
+        />
+        <field
+                name="price"
+                type="text"
+                default=""
+        />
+        <field
+                name="description"
+                type="text"
+                default=""
+                class="input-xxlarge"
+        />
+        <field
+                name="image"
+                type="media"
+                default=""
+                class="inputbox"
+        />
+        <field
+                name="created_at"
+                type="hidden"
+                default=""
+        />
+
+    </fieldset>
+    <fieldset name="hidden">
+
+        <field
+                name="id"
+                type="hidden"
+        />
+    </fieldset>
+</form>

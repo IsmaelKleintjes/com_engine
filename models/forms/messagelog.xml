@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset name="essential">
+    </fieldset>
+
+    <fieldset name="hidden">
+
+        <field
+                name="id"
+                type="hidden"
+                />
+        <field
+                name="published"
+                type="hidden"
+                default="1"
+                />
+
+    </fieldset>
+</form>
