@@ -6,7 +6,55 @@
                 type="hidden"
         />
         <field
-                name="name"
+                name="product_id"
+                type="text"
+                default=""
+        />
+        <field
+                name="user_id"
+                type="text"
+                default=""
+        />
+        <field
+                name="shipping_address"
+                type="text"
+                default=""
+                class="input-xxlarge"
+        />
+        <field
+                name="email"
+                type="text"
+                default=""
+        />
+        <field
+                name="phone"
+                type="text"
+                default=""
+                class="inputbox"
+        />
+        <field
+                name="zipcode"
+                type="text"
+                default=""
+        />
+        <field
+                name="city"
+                type="text"
+                default=""
+        />
+        <field
+                name="country"
+                type="text"
+                default=""
+                class="inputbox"
+        />
+        <field
+                name="shipping_name"
+                type="text"
+                default=""
+        />
+        <field
+                name="amount"
                 type="text"
                 default=""
         />
@@ -14,28 +62,7 @@
                 name="price"
                 type="text"
                 default=""
-        />
-        <field
-                name="description"
-                type="text"
-                default=""
-                class="input-xxlarge"
-        />
-        <field
-                name="stock"
-                type="text"
-                default=""
-        />
-        <field
-                name="image"
-                type="media"
-                default=""
                 class="inputbox"
-        />
-        <field
-                name="featured"
-                type="text"
-                default=""
         />
         <field
                 name="created_at"
